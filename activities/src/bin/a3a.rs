@@ -10,4 +10,15 @@
 // * Use an if..else block to determine which message to display
 // * Use the println macro to display messages to the terminal
 
-fn main() {}
+fn main() {
+    let is_raining = is_raining();
+    if is_raining {
+        println!("hello");
+    } else {
+        println!("goodbye");
+    }
+}
+
+fn is_raining() -> bool {
+    true
+}
