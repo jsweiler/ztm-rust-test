@@ -7,4 +7,10 @@
 // * Use a variable set to either true or false
 // * Use a match expression to determine which message to display
 
-fn main() {}
+fn main() {
+    let is_night = false;
+    match is_night {
+        true => println!("goodnight!"),
+        false => println!("wake up!"),
+    }
+}
