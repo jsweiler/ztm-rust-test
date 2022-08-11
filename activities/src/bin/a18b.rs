@@ -38,17 +38,18 @@ struct Employee {
 
 fn can_access_building(employee: Employee) -> Result<(), String> {
 
+    
     match employee.employed {
         false => return Err("terminated cannot access".to_owned()),
-        _ => ()
+        _ => () //any but the last statement use () instead of Ok(()))
     }
 
     match employee.employee_type {
         EmployeeType::Maintenance => Ok(()),
         EmployeeType::Manager => Ok(()),
         EmployeeType::Marketing => Ok(()),
-        _ => return Err("no access allowed".to_owned())
-        }
+        _ => Err("no access allowed".to_owned()) //for the last statement we don't need return
+    }
 }
 
 fn print_access(employee: Employee) -> Result<(), String> {
