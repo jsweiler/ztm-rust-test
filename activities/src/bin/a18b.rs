@@ -52,7 +52,7 @@ fn can_access_building(employee: Employee) -> Result<(), String> {
 }
 
 fn print_access(employee: Employee) -> Result<(), String> {
-    let access = can_access_building(employee)?;
+    can_access_building(employee)?;
     println!("access ok");
     Ok(())
 }
@@ -60,7 +60,7 @@ fn print_access(employee: Employee) -> Result<(), String> {
 fn main() {
     let employee = Employee{
         employed: true,
-        employee_type: EmployeeType::KitchenStaff
+        employee_type: EmployeeType::Manager
     };
     let result = print_access(employee);
     match result {
