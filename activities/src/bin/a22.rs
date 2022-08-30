@@ -22,7 +22,7 @@ fn clamp(n: i32, lower: i32, upper: i32) -> i32 {
 }
 
 /// Divides a and b.
-fn div(a: i32, b: i32) -> Option<i32> {
+pub fn div(a: i32, b: i32) -> Option<i32> {
     Some(a / b)
 }
 
@@ -32,3 +32,15 @@ fn concat(first: &str, second: &str) -> String {
 }
 
 fn main() {}
+
+#[cfg(test)]
+mod test {
+    use crate::*;
+
+    #[test]
+    fn test_divide() {
+        let result = div(10, 2);
+        let expected = Some(5);
+        assert_eq!(result, expected, "divide is not working");
+    }
+}
