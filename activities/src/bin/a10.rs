@@ -24,6 +24,6 @@ fn main() {
             message = "its small"
         }
     }
-    println!("{:?}", message);
+    println!("this is a test: {:?}", message);
 }
 
